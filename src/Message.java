@@ -24,4 +24,7 @@ public class Message {
  public int getSuccessChance(){
     return successChance;
  }
+public int getRetryCount() {
+    return retryCount;
+}
 }
