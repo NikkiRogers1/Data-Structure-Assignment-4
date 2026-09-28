@@ -3,9 +3,12 @@ public class Message {
     private String messageId;
     private String payload;
     private int retryCount = 0;
- public Message(String messageId, String payload) {
+    private int successChance;
+
+ public Message(String messageId, String payload, int successChance) {
     this.messageId = messageId;
     this.payload = payload;
+    this.successChance = successChance;
  }
 
  @Override 
@@ -13,4 +16,12 @@ public class Message {
    return "Message{messageId: " + messageId + ", payload: " + payload + ", retryCount: " + retryCount + "}";
  }
 
+
+ public void incrementRetryCount() {
+    retryCount++;
+ }
+
+ public int getSuccessChance(){
+    return successChance;
+ }
 }
